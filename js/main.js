@@ -57,6 +57,7 @@ save.onclick = () =>{
 
 erase.onclick = () =>{
     option.drawMode = !option.drawMode;
+    erase.innerText = option.drawMode ? 'Ластик' : 'Кисть'
 }
 
 
