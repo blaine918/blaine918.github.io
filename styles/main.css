@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+}
+
+canvas{
+    border: 1px solid gainsboro;
+}
+
+.app-wrapper{
+    padding: .5em;
+    display: grid;
+    height: 100%;
+    grid-template-rows: max-content 1fr;
+}
+
+.canvas-wrapper{
+    height: 100%;
+    display: grid;
+}
+
+.control {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    column-gap: .5em;
+}
+.control-block{
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-rows: max-content;
+    justify-items: center;
+}
