@@ -16,6 +16,7 @@ const option = {
     color: "black",
     lineWidth: 5,
     drawMode: true,
+    force: 1,
 }
 
 selectedLineWidth.innerText = option.lineWidth;
@@ -68,6 +69,7 @@ function touchstart(e) {
 }
 
 function touchmove(e) {
+    option.force = e.touches[0].force + 0.05;
     pos.px = pos.cx;
     pos.py = pos.cy;
     pos.cx = e.touches[0].clientX - canvas.offsetLeft;
@@ -92,7 +94,7 @@ function draw() {
     context.lineCap = 'round';
     context.globalCompositeOperation = option.drawMode ? 'source-over' : 'destination-out';
     context.strokeStyle = option.color;
-    context.lineWidth = option.lineWidth;
+    context.lineWidth = option.drawMode ? option.lineWidth * option.force : option.lineWidth;
     context.stroke();
     context.closePath();
 }
